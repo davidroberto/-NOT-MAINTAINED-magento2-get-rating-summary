@@ -1,0 +1,29 @@
+<?php
+/**
+ * @var $block \DavidRobert\GetRatingSummary\Block\GetRatingSummary
+ */
+?>
+
+<?php
+    $_ratingSummary = $block->getRatingSummary();
+?>
+
+<div>
+    <div class="block-title">
+        <strong><?= $block->escapeHtml(__('Customer Reviews')) ?></strong>
+    </div>
+
+	<?php if($_ratingSummary){ ?>
+        <div class="product-reviews-summary short">
+            <div class="rating-summary">
+                <div title="<?php echo (int)$_ratingSummary; ?>%" class="rating-result">
+                    <span style="width:<?php echo (int)$_ratingSummary; ?>%"><span><?php echo (int)$_ratingSummary; ?>%</span></span>
+                </div>
+            </div>
+        </div>
+	<?php } ?>
+
+	<div>
+		<span><?= $block->escapeHtml(__("Based on ")) ?></span><span><?php echo $block->getRatingCount(); ?></span><span><?= $block->escapeHtml(__(" reviews")) ?></span>
+    </div>
+</div>
