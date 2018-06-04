@@ -50,7 +50,7 @@ class GetRatingSummary extends Template
 
     }
 
-    public function getRatingSummary()
+    public function getAllRatingsSummary()
     {
     	return $this->getRatingGlobal()->getRatingSummary();
     }
